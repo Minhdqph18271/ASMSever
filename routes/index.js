@@ -101,4 +101,11 @@ router.post('/xemchitiet', function (req, res) {
   })
 })
 
+router.get('/allMobile',function (req,res) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET');
+  Student.find({}, function (err,data){
+    res.send(data);
+  })
+});
 module.exports = router;
